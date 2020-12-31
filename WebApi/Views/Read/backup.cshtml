@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "backup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>backup</h2>
+
+<form action="" method="post">
+    <div class="input_fields_wrap">
+        <div id="input">
+            <label>User Name</label>
+            <input name="UserName" id="UserName" type="text" value="" />
+            <label>Password</label>
+            <input name="Password" id="Password" type="text" value=""/>
+            <label>Address</label>
+            <input name="Address" id="Address" type="text" value=""/>
+            <br/>
+        </div>
+    </div>
+    <input type="submit" value="Save" />
+    <input type="button" id="button" value="ADD"/>
+    
+</form>
+
+<script>
+    $(document).ready(function() {
+        var wrapper = $(".input_fields_wrap");
+        let index = 0;
+        let removedId = 0;
+        console.log("Hello");
+        $('#button').click(function (event) {
+            event.preventDefault();
+            index++;
+            //     var newForm = '<div><label>Name</lable><input name="UserName" type="text"/><lable>Password</lable><input name="Password" type="text"/><label>Address</lable><input name="Address" type="text"/><input type="button" class="removeField" value="Remove"/></div>';
+            $(wrapper).append('<div id="input"><label>Name</label><input id="UserName' + index + '" name="UserName" type="text" value=""/><label>Password</label><input id="Password' + index + '" name="Password" type="text" value=""/><label>Address</label><input id="Address'+index+'" name="Address" type="text"/ value=""><button id="removeField">Remove</button><br/></div>');
+            console.log("Appened");
+        });
+
+      /*  $("#body").on("click", ".removeField", function (event) {
+            alert("I am inside");
+            event.preventDefault();
+            $(this).parent('div').remove();*/
+        $(wrapper).on("click", "#removeField", function (e) { //user click on remove text
+            e.preventDefault();
+            $(this).parent('div').remove();
+            console.log("Removed");
+            index++;
+        })
+
+        $('form').on("submit", function (event) {
+            event.preventDefault();
+            let array = [];
+            console.log($(this).serialize()); //Result UserName=ad&Password=ad&Address=ad like this
+            /*let json = JSON.parse(JSON.stringify(jQuery(this).serializeArray()));
+            console.log(json);*/
+            $('div[id="input"]').each(function (index) {
+                //debugger;
+                console.log("data" + index);
+                //console.log($(this).serialize());
+                console.log($(this));
+                let name = $("this").find('input[name="UserName"]');
+                let val = document.getElementById("UserName").value;
+                console.log(val);
+                let pass = $("#Password").val();
+                console.log(pass);
+                let address = $("#Address").val();
+                console.log(address);
+                let obj = {
+                    "UserName": name,
+                    "Password": pass,
+                    "Address": address
+                };
+               // let json = JSON.stringify(obj);
+                array.push(obj);
+            });
+            console.log(array);
+            
+
+        });
+
+
+        ///This is not working
+       /* $('form').on("submit", function (event) {
+            //alert("Inside Form");
+            //let dataa = JSON.stringify(jQuery("form").serializeArray());
+            let form = $(this);
+            console.log("Hello");
+            //console.log(dataa);
+            let base = "http://localhost:49418/api/";
+            //console.log("going inside");
+         /*   $.ajax({
+                type: "POST",
+                url: base +"User/PostMultidata",
+                contentType: 'application/json',
+                dataType: 'json',
+                data: dataa,
+                complete: function (response) {
+                    alert("Data Sent Successfully"); 
+                }
+            });*/
+       //});
+
+
+    });
+</script>
+
+

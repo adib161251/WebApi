@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Multi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Multi</h2>
+
+<form action="">
+    <div class="form-horizontal" ng-app="dynamicApp" ng-controller="dynamicController">
+        <h3>MultiData</h3>
+        <div data-ng-repeat="user in users">
+            <div class="form-group">
+                <label class="control-label col-md-2">User Name</label>
+                <div class="col-md-10">
+                    <input type="text" id="name" name="name" ng-model="{{users.UserName}}" placeholder="Enter Your Name..." class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Password</label>
+                <div class="col-md-10">
+                    <input type="text" id="pass" name="pass" ng-model="{{users.Password}}" placeholder="Enter Your Password..." class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">ADDRESS</label>
+                <div class="col-md-10">
+                    <input type="text" id="address" name="address" ng-model="{{users.Address}}" placeholder="Enter Your Address..." class="form-control" />
+                </div>
+            </div>
+        </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                    <input type="button"  ng-click="addNewForm()"   value="ADD" class="btn btn-default" />
+                    <input type="button" ng-show="showRemove()" ng-click="removeForm()"  value="Remove" class="btn btn-default" />
+                </div>
+
+            </div>
+        
+        
+
+    </div>
+
+</form>
+
+<script>
+    var app = angular.module("dynamicApp", []);
+    app.controller("dynamicController", function ($scope) {
+        $scope.users[{}];
+        $scope.addNewForm = function () {
+            var newEntryNo = $scope.users.length + 1;
+            $scope.users.push({ 'UserName': });
+        };
+
+    });
+    
+</script>
+

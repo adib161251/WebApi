@@ -1,0 +1,50 @@
+﻿@model List<WebApi.Models.UserModel>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+
+
+@foreach (var data in Model)
+{
+    <div>
+        <h4>UserModel</h4>
+        <hr />
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => data.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => data.UserName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => data.Password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => data.Password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => data.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => data.Address)
+            </dd>
+
+        </dl>
+    </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = data.Id }) |
+            @Html.ActionLink("Back to List", "Read")
+        </p>
+}
+  
