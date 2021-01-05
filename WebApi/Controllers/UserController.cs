@@ -56,9 +56,13 @@ namespace WebApi.Controllers
             return Ok(users);
         }
 
+<<<<<<< HEAD
         [Route("api/User/PostMultidata")]
         [HttpPost]
         public IHttpActionResult PostMultidata ([FromBody]List<UserModel> user)
+=======
+        public IHttpActionResult PostMultidata([FromBody]List<UserModel> user)
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
         {
             if (!ModelState.IsValid) return BadRequest("Data is invalid");
 
@@ -68,13 +72,22 @@ namespace WebApi.Controllers
 
         [Route("api/User/Updatedata")]
         [HttpPut]
+<<<<<<< HEAD
         public IHttpActionResult Updatedata([FromBody] UserModel user)
+=======
+        public IHttpActionResult Updatedata(UserModel user)
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
         {
             if (!ModelState.IsValid) return BadRequest("Data is Invalid");
 
             var check = users.SingleOrDefault(x => x.Id == user.Id);
+<<<<<<< HEAD
             
             if(check == null)
+=======
+
+            if (check == null)
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
             {
                 return NotFound();
             }
@@ -89,16 +102,26 @@ namespace WebApi.Controllers
 
                 return Ok(users);
             }
+<<<<<<< HEAD
         }
         
+=======
+
+        }
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
 
         [Route("api/User/Remove/{id}")]
         [HttpDelete]
         public IHttpActionResult Remove(int id)
         {
             //Here Single and First will through exception if there is no matching
+<<<<<<< HEAD
             var removeData = users.SingleOrDefault(x => x.Id == id); 
             if(removeData == null)
+=======
+            var removeData = users.SingleOrDefault(x => x.Id == id);
+            if (removeData == null)
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
             {
                 return BadRequest("This Id doesn't Exists");
             }

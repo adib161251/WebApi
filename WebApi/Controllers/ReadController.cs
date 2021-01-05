@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using Newtonsoft.Json.Linq;
 using System;
+=======
+﻿using System;
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -39,6 +43,7 @@ namespace WebApi.Controllers
             }
             return View("Read", users);
         }
+<<<<<<< HEAD
 
         public ActionResult Details(int? id)
         {
@@ -171,5 +176,7 @@ namespace WebApi.Controllers
         }
 
 
+=======
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
     }
 }

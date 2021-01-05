@@ -25,6 +25,10 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+<<<<<<< HEAD
+=======
+    <Use64BitIISExpress />
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,9 +56,12 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+<<<<<<< HEAD
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+=======
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -76,6 +83,12 @@
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
+<<<<<<< HEAD
+=======
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -177,9 +190,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\ReadController.cs" />
+=======
+    <Compile Include="Controllers\ReadController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,12 +256,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Data\UserList.cshtml" />
     <Content Include="Views\Read\Read.cshtml" />
     <Content Include="Views\Read\Details.cshtml" />
     <Content Include="Views\Read\Create.cshtml" />
     <Content Include="Views\Read\Multi.cshtml" />
     <Content Include="Views\Read\backup.cshtml" />
+=======
+    <Content Include="Views\Read\Read.cshtml" />
+>>>>>>> 9a8051f81ce98f7f6562c93f93c8ff627c4b9018
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
